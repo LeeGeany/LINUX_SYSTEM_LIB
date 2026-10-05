@@ -1,0 +1,23 @@
+/**
+ * @file Delay.h
+ * @author Jinhee.Lee (tjrgl@naver.com)
+ * @brief 
+ * @version 0.1
+ * @date 2025-10-07
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
+#ifndef __EWLIB_TIME_DELAY_DELAY_H__
+#define __EWLIB_TIME_DELAY_DELAY_H__
+
+#include "ewlib/stdC++.h"
+
+namespace sys
+{
+    void delay_ns(std::uint64_t ns) noexcept;
+    void delay_ms(std::uint32_t ms) noexcept;
+    void delay_us(std::uint32_t us) noexcept;
+} /* namespace sys */
+#endif /* __EWLIB_TIME_DELAY_DELAY_H__ */

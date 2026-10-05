@@ -1,0 +1,79 @@
+/**
+ * @file stdUsrType.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2025-07-30
+ * 
+ * @copyright Copyright (c) 2025
+ * 
+ */
+
+#ifndef __EWLIB_STD_EWLIB_H__
+#define __EWLIB_STD_EWLIB_H__
+
+#include "ewlib/stdC++.h"
+#include "ewlib/stdLinux.h"
+#include "ewlib/stdPosix.h"
+
+namespace jlib
+{
+    using J_STATE = bool;
+
+    using EW_BYTE               = std::byte;
+    using EW_BYTE_VECTOR_T      = std::vector<EW_BYTE>;
+    template <std::size_t T>
+    using EW_BYTE_ARRAY_T       = std::array<EW_BYTE, T>;
+
+    using EW_CHAR_VECTOR_T      = std::vector<char>;
+    template <std::size_t T>
+    using EW_CHAR_ARRAY_T       = std::array<char, T>;
+
+    template <typename T>
+    using J_FUNCTION_T          = std::function<T>;
+    template <typename T>
+    using J_CALLBACK_T          = std::function<T>;
+
+    using J_MILLISECOND_T       = std::chrono::milliseconds;
+    using J_MICROSECOND_T       = std::chrono::microseconds;
+    using J_NANOSECOND_T        = std::chrono::nanoseconds;
+
+    using J_CLOCK_T             = std::chrono::steady_clock;
+    using J_TIMEPOINT_T         = std::chrono::steady_clock::time_point;
+    using J_DURATION_T          = std::chrono::steady_clock::duration;
+
+    using J_CLOCK_T             = std::chrono::steady_clock;
+    using J_TIMEPOINT_T         = std::chrono::time_point<std::chrono::steady_clock>;
+
+    using J_PATH                = std::filesystem::path;
+
+    using J_MUTEX_T             = std::mutex;
+
+    template<typename T>
+    using J_LOCK_GUARD_MUTEX_T  = std::lock_guard<T>;
+
+
+    // ========================= IPC/MSGQ ========================= //
+    using EW_MSGQ_KEY_T            = int32_t;
+    using EW_MSGQ_ID_T             = int32_t;
+
+
+    // ========================= ETHERNET/TCP ========================= //
+    // ETHERNET/BUFFER/SIZE
+
+
+    // ETHENET/TYPE
+    using EW_PORT_T             =   const uint16_t         ;
+    using EW_IP_T               =   std::string            ;
+    using EW_SERVER_NAME_T      =   std::string            ;
+
+    // ETHERNET/BUFFER/SIZE
+    using EW_BUFFER_SIZE            = size_t               ;
+   // using EW_SEND_DATA_BUFFER_T     = std::array<char, EW_SEND_BUFFER_SIZE> ;
+
+    // ETHERNET/TCP/EPOLL
+    using EW_EPOLL_EVENT_T      =   struct epoll_event     ;
+    using EW_EPOLL_T            =   int32_t                ;
+
+} /* namespace EWLIB */
+#endif /* __EWLIB_STD_EWLIB_H__ */
